@@ -17,7 +17,6 @@ fun Application.configureRouting() {
         route("articles") {
             get {
                 // Show a list of articles
-//                call.respond(FreeMarkerContent("index.ftl", mapOf("articles" to articles)))
                 call.respond(FreeMarkerContent("index.ftl", mapOf("articles" to dao.allArticles())))
             }
             get("new") {
